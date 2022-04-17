@@ -1,0 +1,28 @@
+.banner{
+    background-image: url('../../../images/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.banner-text h4{
+    font-size: 2.5rem;
+}
+.banner-text .banner-title{
+    font-size: 64px;
+}
+.banner-text .btn{
+    background-color: #EA4C23;
+    color: #fff;
+    padding: 10px 30px;
+    border: 2px solid #EA4C23;
+    transition: .5s;
+}
+.banner-text .btn:hover{
+    background-color: #fff;
+    color: #EA4C23;
+}
