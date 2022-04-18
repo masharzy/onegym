@@ -10,6 +10,7 @@ import NotFound from "./Pages/Shared/NotFound/NotFound";
 import About from "./Pages/About/About";
 import Blogs from "./Pages/Blogs/Blogs";
 import ResetPassword from "./Pages/Auth/ResetPassword/ResetPassword";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
         {/* 404 Route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      {/* Footer Component */}
+      <Footer />
     </div>
   );
 }

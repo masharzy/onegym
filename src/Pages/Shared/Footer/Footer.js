@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="container text-center text-white">
         <div className="row">
           <h1 className="footer-title">ONEGYM</h1>
-          <ul className="nav justify-content-center align-items-center">
+          <ul className="footer-navbar nav justify-content-center align-items-center">
             <li className="nav-item">
               <Link className="footer-nav" to="/">
                 Home

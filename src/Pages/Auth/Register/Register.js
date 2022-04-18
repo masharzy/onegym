@@ -166,7 +166,7 @@ const Register = () => {
   }, [user]);
 
   return (
-    <div className="container">
+    <div className="container mb-3">
       <ToastContainer
         position="top-right"
         autoClose={5000}

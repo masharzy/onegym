@@ -20,10 +20,11 @@ const About = () => {
           <FontAwesomeIcon className="icon" icon={faPhone} />
           <a href="tel:+8801639722575">+8801639722575</a>
         </h5>
-        <p className="myGoal mx-auto">
+        <p className="myGoal mx-auto mb-5">
           My goal is to become a full-stack web developer. I want to be a <br />
           freelancer. I want to learn web development from programming hero to
-          pro in front and backend.
+          pro in front and backend. <br />
+          I will try my best to achieve my goal by hard work and dedication.
         </p>
       </div>
     </div>
