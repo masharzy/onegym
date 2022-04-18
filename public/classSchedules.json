@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "day": "Saturday",
+        "className": "Lose Weight",
+        "time": "1:30am - 3:30am"
+    },
+    {
+        "id": 2,
+        "day": "Sunday",
+        "className": "Body Building",
+        "time": "2:30am - 5:30am"
+    },
+    {
+        "id": 3,
+        "day": "Monday",
+        "className": "Yoga Fitness",
+        "time": "12:00am - 2:00am"
+    },
+    {
+        "id": 4,
+        "day": "Tuesday",
+        "className": "Weight Lifting",
+        "time": "12:00pm - 1:30pm"
+    },
+    {
+        "id": 5,
+        "day": "Thursday",
+        "className": "Running",
+        "time": "12:00am - 2:00am"
+    },
+    {
+        "id": 6,
+        "day": "Wednesday",
+        "className": "Cycling",
+        "time": "2:00am - 4:00am"
+    }
+]

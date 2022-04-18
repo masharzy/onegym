@@ -14,7 +14,7 @@ const Services = () => {
   return (
     <div className="container service-section mb-5">
       <h1 className="text-center service-title my-5 position-relative">
-        Services
+        My Services
       </h1>
       <div className="row g-4">
         {services.map((service) => (
