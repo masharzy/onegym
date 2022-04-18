@@ -4,7 +4,7 @@ import './Header.css'
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light py-4 bg-white">
+    <nav className="navbar navbar-expand-lg navbar-light py-4 sticky-top bg-white shadow">
       <div className="container">
         <Link className="navbar-brand" to="/">
           <h4>ONEGYM</h4>
