@@ -1,14 +1,12 @@
 # ONEGYM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Live Link
 
-[Click Here](onegym.web.app)
+[Click Here](https://onegym-f75b6.web.app/)
 
 ### Or Copy and Paste It to Your Browser Address Bar
 
-https://onegym.web.app
+https://onegym-f75b6.web.app/
 
 ## Features And Functionality:
 * Fancy Homepage
