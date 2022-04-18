@@ -23,44 +23,6 @@ const ClassSchedules = () => {
             classSchedules.map((classSchedule) => <ClassSchedule key={classSchedule.id} classSchedule={classSchedule}></ClassSchedule>)
         }
         
-        {/* </div> */}
-
-        {/* <table class="table text-center">
-          <thead>
-            <tr>
-              <th scope="col">Day</th>
-              <th scope="col">Class Name</th>
-              <th scope="col">Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Sunday</td>
-              <td>Body Building</td>
-              <td>1:30am - 3:30am</td>
-            </tr>
-            <tr>
-              <td>Monday</td>
-              <td>Yoga Fitness</td>
-              <td>12:00am - 2:00am</td>
-            </tr>
-            <tr>
-              <td>Tuesday</td>
-              <td>Weight Lifting</td>
-              <td>12:00pm - 1:30pm</td>
-            </tr>
-            <tr>
-              <td>Thursday</td>
-              <td>Running</td>
-              <td>12:00am - 2:00am</td>
-            </tr>
-            <tr>
-              <td>Wednesday</td>
-              <td>Cycling</td>
-              <td>2:00am - 4:00am</td>
-            </tr>
-          </tbody>
-        </table> */}
       </div>
   );
 };

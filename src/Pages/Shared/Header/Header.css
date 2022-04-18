@@ -3,3 +3,12 @@
     color: #000;
     font-weight: 700;
 }
+.profile-img{
+    width: 40px;
+    cursor: pointer;
+    margin-right: 7px;
+}
+.inner-profile-img{
+    width:130px;
+    padding: 10px 10px;
+}

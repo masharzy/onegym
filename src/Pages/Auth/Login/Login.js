@@ -9,6 +9,9 @@ import {
 import { auth } from "../../../firebase.init";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-regular-svg-icons";
+import { faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -46,7 +49,10 @@ const Login = () => {
       setUserInfo({ ...userInfo, password: value });
       setErrors({ ...errors, password: "" });
     } else {
-      setErrors({ ...errors, password: "Minimum 6 characters" });
+      setErrors({
+        ...errors,
+        password: "Password Length Must be 6 Characters",
+      });
       setUserInfo({ ...userInfo, password: "" });
     }
   };
@@ -90,13 +96,11 @@ const Login = () => {
   const from = location?.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (user) {
+    if (user || googleUser) {
       navigate(from, { replace: true });
     }
   }, [user]);
 
-  console.log(googleUser);
-  console.log(user);
 
   return (
     <div className="container">
@@ -141,19 +145,17 @@ const Login = () => {
                     onChange={handlePasswordChange}
                     required
                   />
-                  <i
+                  <FontAwesomeIcon
                     style={{
-                      top: "20%",
+                      top: "25%",
                       right: 5,
-                      fontSize: "24px",
+                      fontSize: "18px",
                       cursor: "pointer",
                       position: "absolute",
                     }}
                     onClick={() => setShowPassword(!showPassword)}
-                    className={
-                      showPassword ? "icofont-eye" : "icofont-eye-blocked"
-                    }
-                  ></i>
+                    icon={showPassword ? faEye : faEyeSlash}
+                  />
                 </div>
                 {errors && <p className="text-danger">{errors.password}</p>}
               </div>
