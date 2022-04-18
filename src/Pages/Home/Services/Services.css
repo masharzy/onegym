@@ -1,0 +1,12 @@
+.service-title::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 55px;
+    width: 50px;
+    height: 2px;
+    background-color: #EA4C23;
+    margin: 0 auto;
+}

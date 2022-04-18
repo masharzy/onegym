@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Lose Weight",
+    "price": 1875,
+    "img": "https://i.ibb.co/hKHs1T4/services1.png",
+    "description": "Want to Lose Weight Fast? These Science-Backed Tips Can Help You Lose Weight Sustainably."
+  },
+  {
+    "id": 2,
+    "name": "Body Building",
+    "price": 1683,
+    "img": "https://i.ibb.co/cYL5G2S/service2.png",
+    "description": "The largest selection of fitness articles, exercises, workouts, supplements, & community to help you reach your goals!"
+  },
+  {
+    "id": 3,
+    "name": "Yoga Fitness",
+    "price": 2004,
+    "img": "https://i.ibb.co/zHrVXb7/service3.png",
+    "description": "Yoga's purpose is to strengthen the body and make it more flexible, as well as to calm the mind and awaken the spirit."
+  },
+  {
+    "id": 4,
+    "name": "Weight Lifting",
+    "price": 2312,
+    "img": "https://i.ibb.co/KqgQfNH/service4.png",
+    "description": "Weight lifting is a common type of strength training for developing the strength and size of skeletal muscles."
+  },
+  {
+    "id": 5,
+    "name": "Running",
+    "price": 1840,
+    "img": "https://i.ibb.co/rtZ8Ysb/service5.png",
+    "description": "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot."
+  },
+  {
+    "id": 6,
+    "name": "Cycling",
+    "price": 1444,
+    "img": "https://i.ibb.co/wBBr3jt/services6.png",
+    "description": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport."
+  }
+]
