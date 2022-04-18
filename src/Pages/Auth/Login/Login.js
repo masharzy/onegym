@@ -89,7 +89,7 @@ const Login = () => {
     if (user) {
       navigate(from, {replace:true});
     }
-  }, [user, navigate, from]);
+  }, [user]);
 
   console.log(googleUser);
   console.log(user);

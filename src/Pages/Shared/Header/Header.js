@@ -27,11 +27,22 @@ const Header = () => {
                 Home
               </Link>
             </li>
+
+            {
+              
+            }
+            
             <li className="nav-item">
               <Link className="nav-link" to="/login">
                 Login
               </Link>
             </li>
+            <li className="nav-item">
+              <button className="btn btn-primary text-white rounded-pill px-3 nav-link">
+                Log Out
+              </button>
+            </li>
+
           </ul>
         </div>
       </div>
