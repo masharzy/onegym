@@ -3,18 +3,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import './Footer.css'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer>
-      <div className="container text-center">
+      <div className="container text-center text-white">
         <div className="row">
-          <h1>ONEGYM</h1>
+          <h1 className="footer-title">ONEGYM</h1>
           <ul class="nav justify-content-center">
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <Link class="footer-nav" to="/">
                 Home
-              </a>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="footer-nav" to="/about">
+                About
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="footer-nav" to="/blog">
+                Blog
+              </Link>
             </li>
           </ul>
           <div className="icons">
