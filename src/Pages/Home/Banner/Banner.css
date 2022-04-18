@@ -26,3 +26,22 @@
     background-color: #fff;
     color: #EA4C23;
 }
+ @media screen and (max-width: 430px) {
+    .banner-text .banner-title {
+        font-size: 48px;
+    }
+    .banner-text h4{
+        font-size: 2rem;
+    }
+ }
+ @media screen and (max-width: 325px) {
+    .banner-text .banner-title {
+        font-size: 38px;
+    }
+    .banner-text h4{
+        font-size: 1.5rem;
+    }
+    .banner-text .btn{
+        padding: 5px 30px;
+    }
+ }
