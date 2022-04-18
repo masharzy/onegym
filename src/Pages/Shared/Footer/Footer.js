@@ -42,7 +42,7 @@ const Footer = () => {
               <>
                 <div className="dropdown">
                   <img
-                    className="dropdown-toggle profile-img rounded-circle"
+                    className="dropdown-toggle footer-profile-img rounded-circle"
                     id="dropdownMenuButton1"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"

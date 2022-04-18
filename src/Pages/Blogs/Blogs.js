@@ -1,9 +1,10 @@
 import React from "react";
+import './Blogs.css';
 
 const Blogs = () => {
   return (
-    <div className="container">
-      <h1 className="text-center">Blogs</h1>
+    <div className="container mb-5">
+      <h1 className="text-center blog-title">Blogs</h1>
       <div className="row">
         <div className="col-md-6">
           <div className="card">

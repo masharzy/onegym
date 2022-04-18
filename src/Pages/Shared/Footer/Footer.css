@@ -35,3 +35,8 @@ footer {
     color: rgba(255, 255, 255, 0.3);
     font-size: 18px;
 }
+.footer-profile-img {
+    width: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+}

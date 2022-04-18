@@ -8,7 +8,7 @@ const NotFound = () => {
       <div class="row justify-content-center align-items-center fourZeroFour-row">
         <div class="col-md-12 col-sm-12">
           <div
-            class="card border-0 mx-auto" style={{width: "30rem"}}
+            class="card border-0 mx-auto"
           >
             <h3 class="display-1 text-muted text-center">404</h3>
 
