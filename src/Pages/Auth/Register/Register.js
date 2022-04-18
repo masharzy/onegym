@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,12 +29,17 @@ const Register = () => {
     name: "",
     general: "",
   });
-  const [createUserWithEmailAndPassword, user, loading, emailAndPasswordError] =
-    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [
+    createUserWithEmailAndPassword,
+    emailUser,
+    loading,
+    emailAndPasswordError,
+  ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
   const [updateProfile] = useUpdateProfile(auth);
   const [showPassword, setShowPassword] = useState(false);
+  const [user] = useAuthState(auth);
 
   const handleNameChange = (e) => {
     const value = e.target.value;
@@ -90,14 +99,14 @@ const Register = () => {
 
   useEffect(() => {
     if (emailAndPasswordError) {
-      const newErrorMessage = emailAndPasswordError.message
+      const newEmailErrorMessage = emailAndPasswordError?.message
         .split("Firebase: Error (auth/")
         .join("")
         .split("-")
         .join(" ")
         .split(").")
         .join("");
-      toast.error(newErrorMessage, {
+      toast.error(newEmailErrorMessage, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -117,12 +126,41 @@ const Register = () => {
     }
   }, [emailAndPasswordError, user]);
 
+  useEffect(() => {
+    if (googleError) {
+      const newGoogleErrorMessage = googleError?.message
+        .split("Firebase: Error (auth/")
+        .join("")
+        .split("-")
+        .join(" ")
+        .split(").")
+        .join("");
+      toast.error(newGoogleErrorMessage, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
+    } else if (googleUser?.user?.uid) {
+      toast.success("Login Successful", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
+    }
+  },[googleError, googleUser]);
+
   let navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (user || googleUser) {
+    if (user) {
       navigate(from, { replace: true });
     }
   }, [user]);

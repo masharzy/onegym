@@ -4,7 +4,6 @@ import './Service.css';
 
 const Service = ({ service }) => {
   const { name, img, description, price } = service;
-  console.log(service);
   return (
     <div className="col-md-4">
       <div className="service card h-100">

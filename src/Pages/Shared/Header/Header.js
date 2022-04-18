@@ -1,17 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Header.css";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../../firebase.init";
 import { signOut } from "firebase/auth";
-import userImage from '../../../images/user.png'
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+import { auth } from "../../../firebase.init";
+import userImage from '../../../images/user.png';
+import "./Header.css";
 
 const Header = () => {
   const [user] = useAuthState(auth);
   const handleSignOut = () => {
     signOut(auth);
   };
-  console.log(user);
   return (
     <nav className="navbar navbar-expand-lg navbar-light py-4 sticky-top bg-white shadow">
       <div className="container">
@@ -42,9 +41,9 @@ const Header = () => {
 
             {user ? (
               <>
-                <div class="dropdown">
+                <div className="dropdown">
                   <img
-                    class="dropdown-toggle profile-img rounded-circle"
+                    className="dropdown-toggle profile-img rounded-circle"
                     id="dropdownMenuButton1"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -52,24 +51,24 @@ const Header = () => {
                     alt=""
                   />
                   <ul
-                    class="dropdown-menu text-center"
+                    className="dropdown-menu text-center"
                     aria-labelledby="dropdownMenuButton1"
                   >
                     <li>
                       <img
                         src={user.photoURL == null ? userImage : user.photoURL}
                         alt=""
-                        class="dropdown-item rounded-circle inner-profile-img mx-auto"
+                        className="dropdown-item rounded-circle inner-profile-img mx-auto"
                       />
                     </li>
                     <li>
-                      <span class="dropdown-item">{user.displayName}</span>
+                      <span className="dropdown-item">{user.displayName}</span>
                     </li>
                     <li>
-                      <span class="dropdown-item">{user.email}</span>
+                      <span className="dropdown-item">{user.email}</span>
                     </li>
                     <li>
-                      <span class="dropdown-item">
+                      <span className="dropdown-item">
                         <button
                           onClick={handleSignOut}
                           className="btn btn-primary text-white rounded-pill w-100 nav-link"

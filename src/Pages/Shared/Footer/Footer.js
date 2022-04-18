@@ -1,10 +1,8 @@
-import React from "react";
+import { faFacebook, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import './Footer.css'
+import React from "react";
 import { Link } from "react-router-dom";
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -12,19 +10,19 @@ const Footer = () => {
       <div className="container text-center text-white">
         <div className="row">
           <h1 className="footer-title">ONEGYM</h1>
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <Link class="footer-nav" to="/">
+          <ul className="nav justify-content-center">
+            <li className="nav-item">
+              <Link className="footer-nav" to="/">
                 Home
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="footer-nav" to="/about">
+            <li className="nav-item">
+              <Link className="footer-nav" to="/about">
                 About
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="footer-nav" to="/blog">
+            <li className="nav-item">
+              <Link className="footer-nav" to="/blog">
                 Blog
               </Link>
             </li>

@@ -3,6 +3,7 @@ import "./Login.css";
 import googleImage from "../../../images/social/Google.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
+  useAuthState,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
@@ -25,9 +26,14 @@ const Login = () => {
     password: "",
     general: "",
   });
-  const [signInWithEmailAndPassword, user, loading, emailAndPasswordError] =
-    useSignInWithEmailAndPassword(auth);
+  const [
+    signInWithEmailAndPassword,
+    emailUser,
+    loading,
+    emailAndPasswordError,
+  ] = useSignInWithEmailAndPassword(auth);
   const [showPassword, setShowPassword] = useState(false);
+  const [user] = useAuthState(auth);
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
@@ -91,16 +97,44 @@ const Login = () => {
     }
   }, [emailAndPasswordError, user]);
 
+  useEffect(() => {
+    if (googleError) {
+      const newGoogleErrorMessage = googleError?.message
+        .split("Firebase: Error (auth/")
+        .join("")
+        .split("-")
+        .join(" ")
+        .split(").")
+        .join("");
+      toast.error(newGoogleErrorMessage, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
+    } else if (googleUser?.user?.uid) {
+      toast.success("Login Successful", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
+    }
+  },[googleError, googleUser]);
+
   let navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (user || googleUser) {
+    if (user) {
       navigate(from, { replace: true });
     }
   }, [user]);
-
 
   return (
     <div className="container">
