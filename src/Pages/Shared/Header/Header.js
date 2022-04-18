@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Header.css'
+import "./Header.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-light py-4 sticky-top bg-white shadow">
       <div className="container">
@@ -20,7 +27,10 @@ const Header = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/">
@@ -28,21 +38,29 @@ const Header = () => {
               </Link>
             </li>
 
-            {
-              
-            }
-            
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <button className="btn btn-primary text-white rounded-pill px-3 nav-link">
-                Log Out
-              </button>
-            </li>
-
+            {user ? (
+              <li className="nav-item">
+                <button
+                  onClick={handleSignOut}
+                  className="btn btn-primary text-white rounded-pill px-3 nav-link"
+                >
+                  Log Out
+                </button>
+              </li>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/register">
+                    Register
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

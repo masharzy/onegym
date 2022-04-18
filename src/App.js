@@ -5,6 +5,7 @@ import Header from "./Pages/Shared/Header/Header";
 import Checkout from "./Pages/Checkout/Checkout";
 import Login from "./Pages/Auth/Login/Login";
 import RequireAuth from "./Pages/Auth/RequireAuth/RequireAuth";
+import Register from "./Pages/Auth/Register/Register";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route
           path="/checkout"

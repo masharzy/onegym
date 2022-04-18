@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./Login.css";
 import googleImage from "../../../images/social/Google.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase.init";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -87,7 +91,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
-      navigate(from, {replace:true});
+      navigate(from, { replace: true });
     }
   }, [user]);
 
@@ -143,10 +147,12 @@ const Login = () => {
                       right: 5,
                       fontSize: "24px",
                       cursor: "pointer",
-                      position: "absolute"
+                      position: "absolute",
                     }}
                     onClick={() => setShowPassword(!showPassword)}
-                    className={showPassword ? "icofont-eye" : "icofont-eye-blocked"}
+                    className={
+                      showPassword ? "icofont-eye" : "icofont-eye-blocked"
+                    }
                   ></i>
                 </div>
                 {errors && <p className="text-danger">{errors.password}</p>}
@@ -154,39 +160,39 @@ const Login = () => {
               <div className="text-center">
                 <button
                   className="btn btn-color py-2 mb-4 w-100"
-                  disabled={errors.email || errors.password ? true : false}
+                  disabled={(userInfo.email, userInfo.password ? false : true)}
                 >
                   Login
                 </button>
               </div>
               <div className="text-center mb-3 text-dark">
-                New to Ema-john?&nbsp;
+                New to ONEGYM?&nbsp;
                 <Link to="/register" className="text-dark link fw-bold">
                   Create New Account
                 </Link>
               </div>
             </form>
             <div className="row align-items-center text-center mb-3">
-                <div className="col-md-5">
-                  <hr />
-                </div>
-                <p className="col-md-2">Or</p>
-                <div className="col-md-5">
-                  <hr />
-                </div>
+              <div className="col-md-5">
+                <hr />
               </div>
-              <div className="google-login">
-                <button
-                  id="continueWithGoogle"
-                  className="btn btn-color py-2 mb-5 w-100"
-                  onClick={() => signInWithGoogle()}
-                >
-                  <img src={googleImage} alt="" /> &nbsp;
-                  <span style={{ color: "rgba(42, 65, 79, 1)" }}>
-                    Continue With Google
-                  </span>
-                </button>
+              <p className="col-md-2">Or</p>
+              <div className="col-md-5">
+                <hr />
               </div>
+            </div>
+            <div className="google-login">
+              <button
+                id="continueWithGoogle"
+                className="btn btn-color py-2 mb-5 w-100"
+                onClick={() => signInWithGoogle()}
+              >
+                <img src={googleImage} alt="" /> &nbsp;
+                <span style={{ color: "rgba(42, 65, 79, 1)" }}>
+                  Continue With Google
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

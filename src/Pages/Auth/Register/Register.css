@@ -1,7 +1,6 @@
 .btn-color {
   background-color: #ea4c23 !important;
   color: #fff !important;
-  font-size: 18px;
 }
 
 .link {
@@ -12,32 +11,26 @@ a {
   text-decoration: none;
 }
 
-#continueWithGoogle {
-  background-color: #fff !important;
-  border: 1px solid rgba(149, 160, 167, 1);
-}
-
-.login-card {
-  margin-top: 15px;
+.register-card {
   box-shadow: -14px 14px 0px #ea4c23;
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 3000px) {
-  .login {
+  .register {
     width: 40% !important;
   }
 }
+
 @media screen and (max-width: 1000px) {
-  .login {
+  .register {
     width: 60% !important;
   }
 }
+
 @media screen and (max-width: 768px) {
-  .login {
+  .register {
     width: 80% !important;
   }
-}
-
-.Toastify__toast-body > div:last-child {
-  text-transform: capitalize;
 }
