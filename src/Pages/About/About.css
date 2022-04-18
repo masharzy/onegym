@@ -1,0 +1,26 @@
+.about-title {
+    color: #EA4C23;
+    text-align: center;
+    margin: 50px 0;
+}
+.name{
+    line-height: 30px;
+}
+a{
+    text-decoration: none;
+}
+h5{
+    font-size: 18px;
+}
+.icon{
+    font-size: 18px;
+    margin-right: 10px;
+    color: #000;
+}
+.email a, .phone a{
+    text-decoration: none;
+    color: #000;
+}
+.myGoal{
+    font-size: 17px;
+}

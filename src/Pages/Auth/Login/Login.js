@@ -24,7 +24,6 @@ const Login = () => {
   const [errors, setErrors] = useState({
     email: "",
     password: "",
-    general: "",
   });
   const [
     signInWithEmailAndPassword,
@@ -124,7 +123,7 @@ const Login = () => {
         progress: undefined,
       });
     }
-  },[googleError, googleUser]);
+  }, [googleError, googleUser]);
 
   let navigate = useNavigate();
   const location = useLocation();
@@ -201,11 +200,19 @@ const Login = () => {
                   Login
                 </button>
               </div>
-              <div className="text-center mb-3 text-dark">
-                New to ONEGYM?&nbsp;
-                <Link to="/register" className="text-dark link fw-bold">
-                  Create New Account
-                </Link>
+              <div className="d-flex justify-content-between flex-wrap text-center">
+                <div className="text-center mb-2 text-dark">
+                  New to ONEGYM?&nbsp;
+                  <Link to="/register" className="link fw-bold">
+                    Register
+                  </Link>
+                </div>
+                <div className="text-center mb-2 text-dark">
+                  Forgot Password?&nbsp;
+                  <Link to="/reset-password" className="text-dark link fw-bold">
+                    Reset Password
+                  </Link>
+                </div>
               </div>
             </form>
             <div className="row align-items-center text-center mb-3">
